@@ -25,3 +25,13 @@ jobs:
         mkdir -p ${HOME}/bin
         curl -L https://storage.googleapis.com/kubernetes-release/release/v1.18.2/bin/linux/amd64/kubectl > ${HOME}/bin/kubectl
         chmod +x ${HOME}/bin/kubectl
+    - name: Install helm
+      run: |
+        curl -L https://storage.googleapis.com/kubernetes-helm/helm-v2.16.7-linux-amd64.tar.gz | tar --directory ${HOME} --extract --gzip --file -
+        mv ${HOME}/linux-amd64/helm ${HOME}/bin/helm
+    - name: Install git-crypt
+      run: |
+        curl -L https://github.com/minrk/git-crypt-bin/releases/download/0.5.0/git-crypt > git-crypt
+        echo "46c288cc849c23a28239de3386c6050e5c7d7acd50b1d0248d86e6efff09c61b  git-crypt" | shasum -a 256 -c -
+        chmod +x git-crypt
+        mv git-crypt ${HOME}/bin/git-crypt
