@@ -13,7 +13,6 @@ jobs:
       uses: sliteteam/github-action-git-crypt-unlock@1.1.0
       env:
         GIT_CRYPT_KEY: ${{ secrets.GIT_CRYPT_KEY }}
-    - uses: actions/checkout@v2
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
