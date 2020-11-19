@@ -35,6 +35,5 @@ jobs:
         mv ${HOME}/linux-amd64/helm ${HOME}/bin/helm
     - name: Set up helm
       run: |
-        helm init --client-only
         helm repo add jupyterhub https://jupyterhub.github.io/helm-chart
         helm repo update
