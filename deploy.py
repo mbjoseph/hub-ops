@@ -48,9 +48,6 @@ def setup_auth():
 
 def setup_helm():
     """Ensure helm is up to date and ready to go"""
-    subprocess.check_call([
-        'helm', 'init', '--upgrade',
-    ])
     # wait for tiller to come up
     subprocess.check_call([
         'kubectl', 'rollout', 'status',
