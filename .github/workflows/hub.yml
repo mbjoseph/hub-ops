@@ -37,3 +37,7 @@ jobs:
       run: |
         helm repo add jupyterhub https://jupyterhub.github.io/helm-chart
         helm repo update
+    - name: Build & push image, then deploy nbgrader-hub
+      run: |
+        python ./deploy.py --build --push nbgrader-hub
+        python ./deploy.py --deploy nbgrader-hub
